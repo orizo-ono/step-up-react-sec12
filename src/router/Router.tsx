@@ -15,18 +15,3 @@ export const Router: FC = memo(() => {
 });
 
 export default Router;
-
-{
-  /* <Route
-        path="/home"
-        render={(match: { url: any }) => (
-          <Routes>
-            {homeRoutes.map((route) => (
-              <Route key={route.path} path={`${url}${route.path}`}>
-                {route.children}
-              </Route>
-            ))}
-          </Routes>
-        )}
-      /> */
-}
