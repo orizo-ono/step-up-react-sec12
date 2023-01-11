@@ -4,7 +4,7 @@ import Useranagement from "../components/pages/UserManegement";
 
 export const homeRoutes = [
   {
-    path: "/",
+    path: "/home",
     // exact: true,
     children: <Home />,
   },
