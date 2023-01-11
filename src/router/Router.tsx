@@ -8,25 +8,10 @@ export const Router: FC = memo(() => {
     <Routes>
       <Route path="/" element={<Login />} />
       {homeRoutes.map((route) => (
-        <Route key={route.path} path="/home" element={route.children} />
+        <Route key={route.path} path={`${route.path}`} element={route.children} />
       ))}
     </Routes>
   );
 });
 
 export default Router;
-
-{
-  /* <Route
-        path="/home"
-        render={(match: { url: any }) => (
-          <Routes>
-            {homeRoutes.map((route) => (
-              <Route key={route.path} path={`${url}${route.path}`}>
-                {route.children}
-              </Route>
-            ))}
-          </Routes>
-        )}
-      /> */
-}
