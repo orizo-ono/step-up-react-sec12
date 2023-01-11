@@ -11,13 +11,10 @@ export const Router: FC = memo(() => {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      {/* <Route path="/home" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/home/setting" element={<Setting />} />
       <Route path="/home/user_manegement" element={<Useranagement />} />
-      <Route path="/*" element={<Page404 />} /> */}
-      {homeRoutes.map((route) => (
-        <Route key={route.path} path={`${route.path}`} element={route.children} />
-      ))}
+      <Route path="/*" element={<Page404 />} />
     </Routes>
   );
 });
