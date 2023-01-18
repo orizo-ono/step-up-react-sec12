@@ -18,7 +18,9 @@ export const Login: FC = memo(() => {
         <Divider my={4} />
         <Stack spacing={6} py={4} px={10}>
           <Input placeholder="ユーザーID" onChange={onChangeUserId} value={userId} />
-          <PrimaryButton onClick={onclickLogin}>ログイン</PrimaryButton>
+          <PrimaryButton onClick={onclickLogin} disabled={userId === ""} loading={loading}>
+            ログイン
+          </PrimaryButton>
         </Stack>
       </Box>
     </Flex>
