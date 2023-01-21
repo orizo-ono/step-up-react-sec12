@@ -9,14 +9,16 @@ export const Useranagement: FC = memo(() => {
   const { getUsers, users, loading } = useAllUsers();
   const { onSelecedtUser, selecedtUser } = useSelectUsers();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(selecedtUser);
 
-  const onClickUser = useCallback((id: number) => {
-    onSelecedtUser({ id, users });
-    onOpen();
-  }, []);
+  const onClickUser = useCallback(
+    (id: number) => {
+      onSelecedtUser({ id, users, onOpen });
+    },
+    [users, onSelecedtUser, onOpen]
+  );
 
-  useEffect(() => getUsers(), []);
+  useEffect(() => getUsers(), [getUsers]);
+  // useEffect(() => getUsers());
 
   return (
     <>
@@ -33,7 +35,7 @@ export const Useranagement: FC = memo(() => {
           ))}
         </Wrap>
       )}
-      <UserDetailModal isOpen={isOpen} onClose={onClose} />
+      <UserDetailModal isOpen={isOpen} onClose={onClose} user={selecedtUser} />
     </>
   );
 });
