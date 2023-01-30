@@ -6,6 +6,7 @@ import { Page404 } from "../components/pages/Page404";
 import Setting from "../components/pages/Setting";
 import Useranagement from "../components/pages/UserManegement";
 import { HeaderLayout } from "../components/templete/HeaderLayout";
+// import { LoginUserProvider } from "../provider/LoginUserProvider";
 
 export const Router: FC = memo(() => {
   return (
@@ -17,6 +18,11 @@ export const Router: FC = memo(() => {
           <HeaderLayout>
             <Home />
           </HeaderLayout>
+          // <LoginUserProvider>
+          //   <HeaderLayout>
+          //     <Home />
+          //   </HeaderLayout>
+          // </LoginUserProvider>
         }
       />
       <Route
@@ -25,6 +31,11 @@ export const Router: FC = memo(() => {
           <HeaderLayout>
             <Setting />
           </HeaderLayout>
+          // <LoginUserProvider>
+          //   <HeaderLayout>
+          //     <Setting />
+          //   </HeaderLayout>
+          // </LoginUserProvider>
         }
       />
       <Route
@@ -33,6 +44,11 @@ export const Router: FC = memo(() => {
           <HeaderLayout>
             <Useranagement />
           </HeaderLayout>
+          // <LoginUserProvider>
+          //   <HeaderLayout>
+          //     <Useranagement />
+          //   </HeaderLayout>
+          // </LoginUserProvider>
         }
       />
       <Route path="/*" element={<Page404 />} />
